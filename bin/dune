@@ -1,4 +1,5 @@
 (executable
  (public_name temporal)
+ (package temporal-async)
  (name main)
- (libraries temporal))
+ (libraries temporal-async))

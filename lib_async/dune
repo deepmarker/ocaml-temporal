@@ -1,0 +1,12 @@
+(library
+ (name temporal_async)
+ (public_name temporal-async)
+ (preprocess (pps ppx_jane))
+ (libraries
+   temporal
+   ocaml-protoc-plugin
+   core
+   async
+   h2-async
+   grpc-async
+ ))
