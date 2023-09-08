@@ -1,2 +1,47 @@
 (library
- (name temporal))
+ (public_name temporal)
+ (libraries
+   ocaml-protoc-plugin
+   ocaml-protoc-plugin.google_types
+ ))
+
+(rule
+ (targets
+   TemporalApiBatchV1Message.ml
+   TemporalApiCommandV1Message.ml
+   TemporalApiCommonV1Message.ml
+   TemporalApiEnumsV1Batch_operation.ml
+   TemporalApiEnumsV1Command_type.ml
+   TemporalApiEnumsV1Common.ml
+   TemporalApiEnumsV1Event_type.ml
+   TemporalApiEnumsV1Failed_cause.ml
+   TemporalApiEnumsV1Namespace.ml
+   TemporalApiEnumsV1Query.ml
+   TemporalApiEnumsV1Reset.ml
+   TemporalApiEnumsV1Schedule.ml
+   TemporalApiEnumsV1Task_queue.ml
+   TemporalApiEnumsV1Update.ml
+   TemporalApiEnumsV1Workflow.ml
+   TemporalApiErrordetailsV1Message.ml
+   TemporalApiFailureV1Message.ml
+   TemporalApiFilterV1Message.ml
+   TemporalApiHistoryV1Message.ml
+   TemporalApiNamespaceV1Message.ml
+   TemporalApiOperatorserviceV1Request_response.ml
+   TemporalApiOperatorserviceV1Service.ml
+   TemporalApiProtocolV1Message.ml
+   TemporalApiQueryV1Message.ml
+   TemporalApiReplicationV1Message.ml
+   TemporalApiScheduleV1Message.ml
+   TemporalApiSdkV1Task_complete_metadata.ml
+   TemporalApiTaskqueueV1Message.ml
+   TemporalApiUpdateV1Message.ml
+   TemporalApiVersionV1Message.ml
+   TemporalApiWorkflowserviceV1Request_response.ml
+   TemporalApiWorkflowserviceV1Service.ml
+   TemporalApiWorkflowV1Message.ml
+ )
+ (deps
+  (:proto (glob_files_rec *.proto)))
+ (action
+  (run protoc -I api  "--ocaml_out=open=Google_types:." %{proto})))
