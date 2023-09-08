@@ -5,13 +5,13 @@
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github deepmarker/ocaml-temporal))
 
-(authors "Author Name")
+(authors "Vincent Bernardoff")
 
-(maintainers "Maintainer Name")
+(maintainers "Vincent Bernardoff")
 
-(license LICENSE)
+(license ISC)
 
 (documentation https://url/to/documentation)
 
