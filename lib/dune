@@ -1,6 +1,8 @@
 (library
  (public_name temporal)
+ (preprocess (pps ppx_sexp_conv))
  (libraries
+   base
    ocaml-protoc-plugin
    ocaml-protoc-plugin.google_types
  ))
@@ -44,4 +46,4 @@
  (deps
   (:proto (glob_files_rec *.proto)))
  (action
-  (run protoc -I api  "--ocaml_out=open=Google_types:." %{proto})))
+  (run protoc -I api  "--ocaml_out=open=Google_types;open=Base;annot=[@@deriving sexp_of]:." %{proto})))
