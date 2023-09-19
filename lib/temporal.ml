@@ -1,6 +1,7 @@
 module Batch = TemporalApiBatchV1Message
 module Command = TemporalApiCommandV1Message
 module Common = TemporalApiCommonV1Message
+
 module Enums = struct
   include TemporalApiEnumsV1Batch_operation
   include TemporalApiEnumsV1Command_type
@@ -15,15 +16,18 @@ module Enums = struct
   include TemporalApiEnumsV1Update
   include TemporalApiEnumsV1Workflow
 end
+
 module ErrorDetails = TemporalApiErrordetailsV1Message
 module Failure = TemporalApiFailureV1Message
 module Filter = TemporalApiFilterV1Message
 module History = TemporalApiHistoryV1Message
 module Namespace = TemporalApiNamespaceV1Message
+
 module OperatorService = struct
   include TemporalApiOperatorserviceV1Request_response
   include TemporalApiOperatorserviceV1Service
 end
+
 module Protocol = TemporalApiProtocolV1Message
 module Query = TemporalApiQueryV1Message
 module Replication = TemporalApiReplicationV1Message
@@ -33,6 +37,7 @@ module TaskQueue = TemporalApiTaskqueueV1Message
 module Update = TemporalApiUpdateV1Message
 module Version = TemporalApiVersionV1Message
 module Workflow = TemporalApiWorkflowV1Message
+
 module WorkflowService = struct
   include TemporalApiWorkflowserviceV1Request_response
   include TemporalApiWorkflowserviceV1Service
