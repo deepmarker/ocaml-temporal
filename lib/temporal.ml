@@ -115,7 +115,29 @@ module Command = struct
   ;;
 end
 
-module Common = TemporalApiCommonV1Message
+module Common = struct
+  include TemporalApiCommonV1Message
+
+  module WorkflowExecution = struct
+    module T = struct
+      include WorkflowExecution
+
+      let equal x y =
+        String.(equal x.workflow_id y.workflow_id && equal x.run_id y.run_id)
+      ;;
+
+      let hash x =
+        let open Base.Hash in
+        let h = create () in
+        let h = fold_string h x.workflow_id in
+        fold_string h x.run_id |> get_hash_value
+      ;;
+    end
+
+    include T
+    module Table = Hashtbl.Make (T)
+  end
+end
 
 module Enums = struct
   include TemporalApiEnumsV1Batch_operation
