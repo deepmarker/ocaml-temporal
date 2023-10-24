@@ -7,14 +7,14 @@ module Command = struct
   (* timers *)
 
   let start_timer arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_START_TIMER
       ~attributes:(`Start_timer_command_attributes arg)
       ()
   ;;
 
   let cancel_timer arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_CANCEL_TIMER
       ~attributes:(`Cancel_timer_command_attributes arg)
       ()
@@ -23,28 +23,28 @@ module Command = struct
   (* workflow tasks *)
 
   let complete_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_COMPLETE_WORKFLOW_EXECUTION
       ~attributes:(`Complete_workflow_execution_command_attributes arg)
       ()
   ;;
 
   let fail_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_FAIL_WORKFLOW_EXECUTION
       ~attributes:(`Fail_workflow_execution_command_attributes arg)
       ()
   ;;
 
   let cancel_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_CANCEL_WORKFLOW_EXECUTION
       ~attributes:(`Cancel_workflow_execution_command_attributes arg)
       ()
   ;;
 
   let continue_as_new_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_CONTINUE_AS_NEW_WORKFLOW_EXECUTION
       ~attributes:(`Continue_as_new_workflow_execution_command_attributes arg)
       ()
@@ -53,14 +53,14 @@ module Command = struct
   (* external workflows *)
 
   let request_cancel_external_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION
       ~attributes:(`Request_cancel_external_workflow_execution_command_attributes arg)
       ()
   ;;
 
   let signal_external_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_SIGNAL_EXTERNAL_WORKFLOW_EXECUTION
       ~attributes:(`Signal_external_workflow_execution_command_attributes arg)
       ()
@@ -69,7 +69,7 @@ module Command = struct
   (* child workflows *)
 
   let start_child_workflow_execution arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_START_CHILD_WORKFLOW_EXECUTION
       ~attributes:(`Start_child_workflow_execution_command_attributes arg)
       ()
@@ -78,14 +78,14 @@ module Command = struct
   (* activity tasks *)
 
   let schedule_activity_task arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_SCHEDULE_ACTIVITY_TASK
       ~attributes:(`Schedule_activity_task_command_attributes arg)
       ()
   ;;
 
   let request_cancel_activity_task arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_REQUEST_CANCEL_ACTIVITY_TASK
       ~attributes:(`Request_cancel_activity_task_command_attributes arg)
       ()
@@ -94,21 +94,21 @@ module Command = struct
   (* misc. *)
 
   let record_marker arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_RECORD_MARKER
       ~attributes:(`Record_marker_command_attributes arg)
       ()
   ;;
 
   let upsert_workflow_search_attributes arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_UPSERT_WORKFLOW_SEARCH_ATTRIBUTES
       ~attributes:(`Upsert_workflow_search_attributes_command_attributes arg)
       ()
   ;;
 
   let modify_workflow_properties arg =
-    Command.make
+    Command.create
       ~command_type:COMMAND_TYPE_MODIFY_WORKFLOW_PROPERTIES
       ~attributes:(`Modify_workflow_properties_command_attributes arg)
       ()
