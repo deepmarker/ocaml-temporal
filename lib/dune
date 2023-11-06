@@ -2,7 +2,7 @@
  (public_name temporal)
  (preprocess (pps ppx_jane))
  (libraries
-   base
+   core
    ocaml-protoc-plugin
    ocaml-protoc-plugin.google_types
  ))
@@ -46,4 +46,4 @@
  (deps
   (:proto (glob_files_rec *.proto)))
  (action
-  (run protoc -I api  "--ocaml_out=open=Google_types;open=Base;annot=[@@deriving equal,compare,sexp]:." %{proto})))
+  (run protoc -I api  "--ocaml_out=open=Google_types;open=Base;annot=[@@deriving hash,equal,compare,sexp]:." %{proto})))
