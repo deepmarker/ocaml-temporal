@@ -42,6 +42,7 @@
    TemporalApiWorkflowserviceV1Request_response.ml
    TemporalApiWorkflowserviceV1Service.ml
    TemporalApiWorkflowV1Message.ml
+   TemporalApiNexusV1Message.ml
  )
  (deps
   (:proto (glob_files_rec *.proto)))
